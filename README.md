@@ -1,5 +1,10 @@
-A generic disjoint-set implementation, AKA union-find set.
-==========================================================
+unionfind.h
+===========
+
+A generic disjoint-set AKA union-find.
+
+Implementation
+--------------
 
 The implemention is a "Disjoint-set forest" with the enhancements "union by rank" and "path compression" as described on the Wikipedia page *Disjoint-set data structure* http://en.wikipedia.org/wiki/Disjoint-set_data_structure.
 
@@ -26,11 +31,11 @@ int main() {
 	struct foo *representative_a;
 	struct foo *representative_b;
 
-	/* Create a singleton sets for each of a and b */
+	/* Create a singleton set for each of a and b */
 	UF_MAKESET(struct foo, &a);
 	UF_MAKESET(struct foo, &b);
 
-	/* Unify a and b, i.e. join their sets */
+	/* Unify a and b, i.e. join their sets together */
 	UF_UNION(struct foo, &a, &b);
 
 	/* If a and b are in the same set, they have the same representative */
